@@ -9,3 +9,15 @@ cmake ..
 make -j4
 openocd -f interface/raspberrypi-swd.cfg -f target/rp2040.cfg -c "program my_demo.elf verify reset exit"
 ```
+Remeber to set PICO_SDK_PATH in env variable
+Example:
+
+```
+export PICO_SDK_PATH=/home/pi/rpi_pico/pico-sdk
+```
+
+Or before CMAKE command
+
+```
+PICO_SDK_PATH=/home/pi/rpi_pico/pico-sdk/ cmake ..
+```
